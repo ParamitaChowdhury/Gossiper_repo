@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gossiper/CallsApp.dart';
 import 'package:gossiper/ChatsApp.dart';
 import 'package:gossiper/StoriesApp.dart';
+import 'package:gossiper/drawerApp.dart';
 
 class AppBarApp extends StatefulWidget {
   const AppBarApp({super.key});
@@ -55,9 +56,9 @@ class _AppBarAppState extends State<AppBarApp>
                     //     toastLength: Toast.LENGTH_SHORT,
                     //     gravity: ToastGravity.CENTER);
                   }),
-              IconButton(
-                // onPressed: () => ListTile(),
-                icon: Icon(Icons.more_vert, color: Colors.black),
+              Icon(
+                Icons.more_vert,
+                color: Colors.black,
               )
             ],
             bottom: TabBar(
@@ -89,7 +90,7 @@ class _AppBarAppState extends State<AppBarApp>
         controller: _tabController,
         children: const [ChatsApp(), StoriesApp(), CallsApp()],
       ),
-      drawer: Drawer(backgroundColor: Colors.white70, width: 450.0),
+      drawer: DrawerApp(),
     );
   }
 }
