@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gossiper/CallsApp.dart';
 import 'package:gossiper/ChatsApp.dart';
@@ -91,6 +92,20 @@ class _AppBarAppState extends State<AppBarApp>
         children: const [ChatsApp(), StoriesApp(), CallsApp()],
       ),
       drawer: DrawerApp(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        backgroundColor: Colors.pinkAccent,
+        child: const Icon(Icons.send),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.cyanAccent,
+        child: Container(
+          height: 50.0,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
