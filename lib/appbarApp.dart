@@ -56,10 +56,15 @@ class _AppBarAppState extends State<AppBarApp>
                     //     toastLength: Toast.LENGTH_SHORT,
                     //     gravity: ToastGravity.CENTER);
                   }),
-              Icon(
-                Icons.more_vert,
-                color: Colors.black,
-              )
+              PopupMenuButton<String>(
+                  icon: Icon(
+                    Icons.more_vert,
+                    color: Colors.black,
+                  ),
+                  itemBuilder: (context) => [
+                        PopupMenuItem(child: Text('Create New Group')),
+                        PopupMenuItem(child: Text('Starred Message')),
+                      ])
             ],
             bottom: TabBar(
               controller: _tabController,

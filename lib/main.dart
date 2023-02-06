@@ -5,6 +5,7 @@ void main() {
   runApp(
     MaterialApp(
       title: 'Gossiper',
+      navigatorKey: myNavigatorKey,
       theme: ThemeData(
           primaryColor: Colors.cyanAccent,
           scaffoldBackgroundColor: Colors.white),
