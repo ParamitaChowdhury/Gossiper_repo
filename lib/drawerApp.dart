@@ -15,7 +15,7 @@ class _DrawerAppState extends State<DrawerApp> {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Colors.white,
-      width: 450.0,
+      width: 300.0,
       child: ListView(children: const [
         SizedBox(
           height: 208.0,

@@ -25,7 +25,6 @@ class _AppBarAppState extends State<AppBarApp>
 
   @override
   Widget build(BuildContext context) {
-    List<String> more_icon = ['New Group', 'starred Messages', ''];
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(200),
