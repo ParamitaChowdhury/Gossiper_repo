@@ -4,6 +4,7 @@ import 'package:gossiper/CallsApp.dart';
 import 'package:gossiper/ChatsApp.dart';
 import 'package:gossiper/StoriesApp.dart';
 import 'package:gossiper/drawerApp.dart';
+import 'main.dart';
 
 class AppBarApp extends StatefulWidget {
   const AppBarApp({super.key});
@@ -45,6 +46,11 @@ class _AppBarAppState extends State<AppBarApp>
             ),
             backgroundColor: Colors.lime,
             actions: [
+              Icon(
+                Icons.toggle_off_outlined,
+                size: 45,
+              ),
+              // Switch(activeColor: Colors.lime,value: , onChanged: onChanged)
               IconButton(
                   icon: Icon(Icons.search, color: Colors.black),
                   onPressed: () {
