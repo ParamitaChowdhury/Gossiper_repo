@@ -43,7 +43,7 @@ class _AppBarAppState extends State<AppBarApp>
                         fontSize: 50)),
               ],
             ),
-            backgroundColor: Colors.cyanAccent,
+            backgroundColor: Colors.lime,
             actions: [
               IconButton(
                   icon: Icon(Icons.search, color: Colors.black),
@@ -62,11 +62,12 @@ class _AppBarAppState extends State<AppBarApp>
                   ),
                   itemBuilder: (context) => [
                         PopupMenuItem(child: Text('Create New Group')),
-                        PopupMenuItem(child: Text('Starred Message')),
+                        PopupMenuItem(child: Text('Starred Messages')),
                       ])
             ],
             bottom: TabBar(
               controller: _tabController,
+              indicatorColor: Colors.green,
               tabs: const [
                 Tab(
                   icon: Icon(
@@ -95,6 +96,20 @@ class _AppBarAppState extends State<AppBarApp>
         children: const [ChatsApp(), StoriesApp(), CallsApp()],
       ),
       drawer: DrawerApp(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        backgroundColor: Colors.lime,
+        child: const Icon(Icons.send),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        // color: Colors.cyanAccent,
+        child: Container(
+          height: 50.0,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

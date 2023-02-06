@@ -12,7 +12,7 @@ class _CallsAppState extends State<CallsApp> {
   Widget build(BuildContext context) {
     return const Center(
       child: Text('No calls to display',
-          style: TextStyle(color: Colors.black, fontSize: 50),
+          style: TextStyle(color: Colors.black, fontSize: 30),
           textDirection: TextDirection.ltr),
     );
   }

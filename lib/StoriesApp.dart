@@ -12,7 +12,7 @@ class _StoriesAppState extends State<StoriesApp> {
   Widget build(BuildContext context) {
     return const Center(
       child: Text('No stories to display',
-          style: TextStyle(color: Colors.black, fontSize: 50),
+          style: TextStyle(color: Colors.black, fontSize: 30),
           textDirection: TextDirection.ltr),
     );
   }

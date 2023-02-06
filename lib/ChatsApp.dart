@@ -13,7 +13,7 @@ class _ChatsAppState extends State<ChatsApp> {
     return const Center(
       child: Text(
         'No chats to display',
-        style: TextStyle(color: Colors.black, fontSize: 50),
+        style: TextStyle(color: Colors.black, fontSize: 30),
         textDirection: TextDirection.ltr,
       ),
     );

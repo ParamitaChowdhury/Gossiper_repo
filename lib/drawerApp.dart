@@ -26,7 +26,7 @@ class _DrawerAppState extends State<DrawerApp> {
             currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.white70, child: Text('AB')),
             decoration: BoxDecoration(
-              color: Colors.cyanAccent,
+              color: Colors.lime,
             ),
           ),
         ),

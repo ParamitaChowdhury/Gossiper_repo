@@ -6,8 +6,7 @@ void main() {
     MaterialApp(
       title: 'Gossiper',
       theme: ThemeData(
-          primaryColor: Colors.cyanAccent,
-          scaffoldBackgroundColor: Colors.white),
+          primaryColor: Colors.lime, scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
       home: AppBarApp(),
     ),
