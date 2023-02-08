@@ -11,7 +11,10 @@ class _InviteAppState extends State<InviteApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.cyanAccent),
+      appBar: AppBar(
+        backgroundColor: Colors.lime,
+        title: Text('Invite a friend', style: TextStyle(color: Colors.black)),
+      ),
     );
   }
 }

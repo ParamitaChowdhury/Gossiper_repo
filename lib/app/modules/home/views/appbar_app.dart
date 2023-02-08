@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
-import 'package:gossiper/CallsApp.dart';
-import 'package:gossiper/ChatsApp.dart';
-import 'package:gossiper/StoriesApp.dart';
-import 'package:gossiper/drawerApp.dart';
-import 'main.dart';
+import 'package:gossiper/app/modules/home/views/calls_app.dart';
+import 'package:gossiper/app/modules/home/views/chats_app.dart';
+import 'package:gossiper/app/modules/home/views/StoriesApp.dart';
+
+import 'package:gossiper/app/modules/home/views/new_group_app.dart';
+
+import '../../common/navigation_drawer_app.dart';
 
 class AppBarApp extends StatefulWidget {
   const AppBarApp({super.key});
@@ -27,10 +29,11 @@ class _AppBarAppState extends State<AppBarApp>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(200),
         child: AppBar(
-            elevation: 10.2,
+            elevation: 0.0,
             title: Row(
               children: [
                 Image.asset('icons/AppBarLogo.png', scale: 12.0),
@@ -46,10 +49,6 @@ class _AppBarAppState extends State<AppBarApp>
             ),
             backgroundColor: Colors.lime,
             actions: [
-              Icon(
-                Icons.toggle_off_outlined,
-                size: 45,
-              ),
               // Switch(activeColor: Colors.lime,value: , onChanged: onChanged)
               IconButton(
                   icon: Icon(Icons.search, color: Colors.black),
@@ -67,13 +66,37 @@ class _AppBarAppState extends State<AppBarApp>
                     color: Colors.black,
                   ),
                   itemBuilder: (context) => [
-                        PopupMenuItem(child: Text('Create New Group')),
-                        PopupMenuItem(child: Text('Starred Messages')),
+                        PopupMenuItem(
+                            child: Text('Create New Group'),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => NewGroupApp()));
+                            }),
+                        PopupMenuItem(
+                          child: Text('Starred Messages'),
+                        ),
                       ])
             ],
             bottom: TabBar(
               controller: _tabController,
-              indicatorColor: Colors.green,
+              // style1
+              // indicatorColor: Colors.green,
+              // unselectedLabelColor: Colors.redAccent,
+              // indicatorSize: TabBarIndicatorSize.tab,
+              // indicator: BoxDecoration(
+              //     // gradient: LinearGradient(
+              //     //     colors: const [Colors.green, Colors.limeAccent]),
+              //     borderRadius: BorderRadius.circular(50),
+              //     color: Colors.redAccent),
+              // style2
+              indicatorSize: TabBarIndicatorSize.tab,
+              indicator: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
+                  color: Colors.white),
               tabs: const [
                 Tab(
                   icon: Icon(
@@ -101,19 +124,13 @@ class _AppBarAppState extends State<AppBarApp>
         controller: _tabController,
         children: const [ChatsApp(), StoriesApp(), CallsApp()],
       ),
-      drawer: DrawerApp(),
+      drawer: NavigationDrawerApp(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
         },
         backgroundColor: Colors.lime,
         child: const Icon(Icons.send),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        // color: Colors.cyanAccent,
-        child: Container(
-          height: 50.0,
-        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );

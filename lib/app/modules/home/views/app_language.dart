@@ -11,7 +11,11 @@ class _AppLanguageState extends State<AppLanguage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.cyanAccent),
+      appBar: AppBar(
+        backgroundColor: Colors.lime,
+        title:
+            Text('Select App Language', style: TextStyle(color: Colors.black)),
+      ),
     );
   }
 }

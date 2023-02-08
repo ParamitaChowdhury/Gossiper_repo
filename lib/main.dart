@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
-import 'appbarApp.dart';
+import 'app/modules/home/views/appbar_app.dart';
+import 'package:get/get.dart';
+import 'app/routes/app_pages.dart';
 
 void main() {
-  bool isSwitched = false;
   runApp(
-    MaterialApp(
+    GetMaterialApp(
       title: 'Gossiper',
       debugShowCheckedModeBanner: false,
       home: AppBarApp(),
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        // brightness: Brightness.dark,
+        primaryColor: Colors.lime,
+      ),
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
     ),
   );
 }
