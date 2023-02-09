@@ -10,10 +10,12 @@ class StoriesApp extends StatefulWidget {
 class _StoriesAppState extends State<StoriesApp> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('No stories to display',
-          style: TextStyle(color: Colors.black, fontSize: 30),
-          textDirection: TextDirection.ltr),
-    );
+    return Scaffold(
+        body: Center(
+            child: Text(
+      'No Stories to display',
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+      textDirection: TextDirection.ltr,
+    )));
   }
 }

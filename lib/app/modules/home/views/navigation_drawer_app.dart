@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gossiper/app/routes/app_pages.dart';
-import 'package:gossiper/app/modules/home/views/account_app.dart';
-import 'package:gossiper/app_theme.dart';
+import 'package:gossiper/global_colors.dart';
 import 'package:provider/provider.dart';
-import 'package:gossiper/main.dart';
-import 'package:gossiper/provider/theme_provider.dart';
+
+import '../../../../consumer_for_theme_change.dart';
+import '../../../../theme.dart';
 
 class NavigationDrawerApp extends StatefulWidget {
   const NavigationDrawerApp({Key? key}) : super(key: key);
@@ -20,6 +20,7 @@ class _NavigationDrawerAppState extends State<NavigationDrawerApp> {
     return Drawer(
       child: ListView(children: [
         SizedBox(height: 207.0, child: buildDrawerHeader()),
+        ConsumerForThemeChange(),
         // Divider(
         //   color: Colors.grey,
         // ),
@@ -55,12 +56,6 @@ class _NavigationDrawerAppState extends State<NavigationDrawerApp> {
             textIconColor: Get.currentRoute == Routes.INVITE
                 ? Colors.white
                 : Colors.black),
-        ListTile(
-          leading: Icon(Icons.color_lens_outlined),
-          //title: Text('change theme'),
-          // trailing:
-          // ElevatedButton(onPressed: () {}, child: Text('change theme')),
-        )
       ]),
     );
   }

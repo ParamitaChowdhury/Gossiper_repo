@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:gossiper/app/modules/home/views/calls_app.dart';
 import 'package:gossiper/app/modules/home/views/chats_app.dart';
 import 'package:gossiper/app/modules/home/views/StoriesApp.dart';
-import 'package:gossiper/app_theme.dart';
+import 'package:gossiper/global_colors.dart';
 import 'package:gossiper/app/modules/home/views/new_group_app.dart';
+import 'package:provider/provider.dart';
 
+import '../../../../theme.dart';
 import 'navigation_drawer_app.dart';
 
 class AppBarApp extends StatefulWidget {
@@ -18,7 +20,7 @@ class AppBarApp extends StatefulWidget {
 class _AppBarAppState extends State<AppBarApp>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
+  var _isDark = false;
   @override
   void initState() {
     // TODO: implement initState
@@ -53,7 +55,6 @@ class _AppBarAppState extends State<AppBarApp>
             ),
             // backgroundColor: GlobalVariables.selectedNavBarColor,
             actions: [
-              // Switch(activeColor: Colors.lime,value: , onChanged: onChanged)
               IconButton(
                   icon: Icon(Icons.search, color: Colors.black),
                   onPressed: () {

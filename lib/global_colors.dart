@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class GlobalVariables {
   // COLORS
@@ -18,3 +19,15 @@ class GlobalVariables {
   static const drawerHeaderColor = Color.fromARGB(255, 153, 153, 255);
   static const floatingActionButtonColor = Color.fromARGB(255, 102, 102, 255);
 }
+
+ThemeData light = ThemeData(
+    brightness: Brightness.light,
+    primarySwatch: Colors.indigo,
+    accentColor: Colors.pink,
+    scaffoldBackgroundColor: Color(0xfff1f1f1));
+
+ThemeData dark = ThemeData(
+  brightness: Brightness.dark,
+  primarySwatch: Colors.indigo,
+  accentColor: Colors.pink,
+);

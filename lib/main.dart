@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gossiper/provider/theme_provider.dart';
 import 'app/modules/home/views/appbar_app.dart';
 import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
+import 'package:gossiper/theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -15,21 +15,19 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (context) => ThemeProvider(),
-        builder: (context, child) {
-          final provider = Provider.of<ThemeProvider>(context);
+      create: (_) => ThemeNotifier(),
+      child: Consumer<ThemeNotifier>(
+        builder: (context, ThemeNotifier notifier, child) {
           return GetMaterialApp(
             title: 'Gossiper',
             debugShowCheckedModeBanner: false,
+            theme: notifier.darkTheme ? dark : light,
             home: AppBarApp(),
-            theme: ThemeData(
-              // Define the default brightness and colors.
-              // brightness: Brightness.dark,
-              primaryColor: Colors.lime,
-            ),
             initialRoute: AppPages.INITIAL,
             getPages: AppPages.routes,
           );
-        });
+        },
+      ),
+    );
   }
 }

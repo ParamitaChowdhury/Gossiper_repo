@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:gossiper/app_theme.dart';
+import 'package:gossiper/global_colors.dart';
 
 import 'navigation_drawer_app.dart';
 import '../controllers/home_controller.dart';

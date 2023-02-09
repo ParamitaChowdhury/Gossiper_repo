@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app_theme.dart';
+import '../../../../global_colors.dart';
 
 class SettingsApp extends StatefulWidget {
   const SettingsApp({Key? key}) : super(key: key);
@@ -14,9 +14,9 @@ class _SettingsAppState extends State<SettingsApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: GlobalVariables.drawerHeaderColor,
-        title: Text('Settings', style: TextStyle(color: Colors.black)),
-      ),
+          backgroundColor: GlobalVariables.drawerHeaderColor,
+          title: Text('Settings', style: TextStyle(color: Colors.black))),
+      body: Text('I am settings page'),
     );
   }
 }

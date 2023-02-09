@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app_theme.dart';
+import '../../../../global_colors.dart';
 
 class AppLanguage extends StatefulWidget {
   const AppLanguage({Key? key}) : super(key: key);

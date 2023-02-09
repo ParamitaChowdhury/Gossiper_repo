@@ -10,10 +10,12 @@ class CallsApp extends StatefulWidget {
 class _CallsAppState extends State<CallsApp> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('No calls to display',
-          style: TextStyle(color: Colors.black, fontSize: 30),
-          textDirection: TextDirection.ltr),
-    );
+    return Scaffold(
+        body: Center(
+            child: Text(
+      'No Calls to display',
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+      textDirection: TextDirection.ltr,
+    )));
   }
 }
