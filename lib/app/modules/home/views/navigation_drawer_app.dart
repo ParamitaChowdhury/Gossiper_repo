@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:gossiper/app/routes/app_pages.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gossiper/app/modules/home/views/account_app.dart';
+import 'package:gossiper/app_theme.dart';
 
 class NavigationDrawerApp extends StatefulWidget {
   const NavigationDrawerApp({Key? key}) : super(key: key);
@@ -62,14 +63,14 @@ class _NavigationDrawerAppState extends State<NavigationDrawerApp> {
       accountName: Text("ABC"),
       accountEmail: Text("CoderABC@gmail.com"),
       currentAccountPicture: CircleAvatar(
-        foregroundColor: Colors.lime,
+        foregroundColor: GlobalVariables.drawerHeaderColor,
         backgroundColor: Colors.white,
         child: Text('ABC'),
         //backgroundImage: AssetImage('icons/AppBarLogo.png'),
       ),
       currentAccountPictureSize: Size.square(72),
       decoration: BoxDecoration(
-        color: Colors.lime,
+        color: GlobalVariables.drawerHeaderColor,
       ),
     );
   }

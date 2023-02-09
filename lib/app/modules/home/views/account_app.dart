@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:gossiper/app_theme.dart';
 
-import '../../common/navigation_drawer_app.dart';
+import 'navigation_drawer_app.dart';
 import '../controllers/home_controller.dart';
 
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class _AccountAppState extends State<AccountApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lime,
+        backgroundColor: GlobalVariables.drawerHeaderColor,
         title: Text('user profile', style: TextStyle(color: Colors.black)),
       ),
     );

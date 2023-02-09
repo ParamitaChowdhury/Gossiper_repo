@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app_theme.dart';
+
 class InviteApp extends StatefulWidget {
   const InviteApp({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class _InviteAppState extends State<InviteApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lime,
+        backgroundColor: GlobalVariables.drawerHeaderColor,
         title: Text('Invite a friend', style: TextStyle(color: Colors.black)),
       ),
     );

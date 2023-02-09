@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app_theme.dart';
+
 class AppLanguage extends StatefulWidget {
   const AppLanguage({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class _AppLanguageState extends State<AppLanguage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lime,
+        backgroundColor: GlobalVariables.drawerHeaderColor,
         title:
             Text('Select App Language', style: TextStyle(color: Colors.black)),
       ),

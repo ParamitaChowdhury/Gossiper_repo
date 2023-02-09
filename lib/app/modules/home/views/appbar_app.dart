@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:gossiper/app/modules/home/views/calls_app.dart';
 import 'package:gossiper/app/modules/home/views/chats_app.dart';
 import 'package:gossiper/app/modules/home/views/StoriesApp.dart';
-
+import 'package:gossiper/app_theme.dart';
 import 'package:gossiper/app/modules/home/views/new_group_app.dart';
 
-import '../../common/navigation_drawer_app.dart';
+import 'navigation_drawer_app.dart';
 
 class AppBarApp extends StatefulWidget {
   const AppBarApp({super.key});
@@ -33,7 +33,11 @@ class _AppBarAppState extends State<AppBarApp>
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(200),
         child: AppBar(
-            elevation: 0.0,
+            flexibleSpace: Container(
+              decoration:
+                  BoxDecoration(gradient: GlobalVariables.appBarGradient),
+            ),
+            elevation: 10.0,
             title: Row(
               children: [
                 Image.asset('icons/AppBarLogo.png', scale: 12.0),
@@ -47,7 +51,7 @@ class _AppBarAppState extends State<AppBarApp>
                         fontSize: 50)),
               ],
             ),
-            backgroundColor: Colors.lime,
+            // backgroundColor: GlobalVariables.selectedNavBarColor,
             actions: [
               // Switch(activeColor: Colors.lime,value: , onChanged: onChanged)
               IconButton(
@@ -82,7 +86,7 @@ class _AppBarAppState extends State<AppBarApp>
             bottom: TabBar(
               controller: _tabController,
               // style1
-              // indicatorColor: Colors.green,
+              indicatorColor: GlobalVariables.indicatorTabColor,
               // unselectedLabelColor: Colors.redAccent,
               // indicatorSize: TabBarIndicatorSize.tab,
               // indicator: BoxDecoration(
@@ -91,12 +95,12 @@ class _AppBarAppState extends State<AppBarApp>
               //     borderRadius: BorderRadius.circular(50),
               //     color: Colors.redAccent),
               // style2
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicator: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
-                  color: Colors.white),
+              // indicatorSize: TabBarIndicatorSize.tab,
+              // indicator: BoxDecoration(
+              //     borderRadius: BorderRadius.only(
+              //         topLeft: Radius.circular(10),
+              //         topRight: Radius.circular(10)),
+              //     color: Colors.white),
               tabs: const [
                 Tab(
                   icon: Icon(
@@ -129,7 +133,7 @@ class _AppBarAppState extends State<AppBarApp>
         onPressed: () {
           // Add your onPressed code here!
         },
-        backgroundColor: Colors.lime,
+        backgroundColor: GlobalVariables.floatingActionButtonColor,
         child: const Icon(Icons.send),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
